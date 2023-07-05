@@ -1,12 +1,12 @@
-public enum TetrisShape
+public enum TileColor
 {
-    IShape,
-    JShape,
-    LShape,
-    OShape,
-    SShape,
-    TShape,
-    ZShape
+    LightBlue,
+    Blue,
+    Orange,
+    Yellow,
+    Green,
+    Purple,
+    Red
 }
 
 public class TetrominoData

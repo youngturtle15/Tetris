@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -198,7 +197,7 @@ public class GameManager : MonoBehaviour
         for (int i = currShape.childCount - 1; i >= 0; i--)
         {
             Transform blockObj = currShape.GetChild(i);
-            blockObj.GetComponent<Block>().boardArrayLoc = new Vector2(19 - (blockObj.position.y - 0.5f), blockObj.position.x - 0.5f);
+            blockObj.GetComponent<Tile>().boardArrayLoc = new Vector2(19 - (blockObj.position.y - 0.5f), blockObj.position.x - 0.5f);
             currShape.GetChild(i).SetParent(tetrisBoard);
         }
 
@@ -248,7 +247,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < tetrisBoard.childCount; i++)
         {
             Transform blockTr = tetrisBoard.GetChild(i);
-            Block block = blockTr.GetComponent<Block>();
+            Tile block = blockTr.GetComponent<Tile>();
             int blockRow = (int)block.boardArrayLoc.x;
             if (rowsToClear.Contains(blockRow))
             {
