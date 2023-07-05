@@ -1,15 +1,15 @@
-public enum BlockColor
+public enum TetrisShape
 {
-    LightBlue,
-    Blue,
-    Orange,
-    Yellow,
-    Green,
-    Purple,
-    Red
+    IShape,
+    JShape,
+    LShape,
+    OShape,
+    SShape,
+    TShape,
+    ZShape
 }
 
-public class TetrominoBlock
+public class TetrominoData
 {
     // 일자
     public static int[,,] IBlockArray = new int[4, 4, 4]

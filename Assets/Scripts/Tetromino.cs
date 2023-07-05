@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class Tetromino : MonoBehaviour
 {
-    // 생성되는 위치
-    public Vector3 spawnPosition;
-    [SerializeField]
-    private Vector3 transformOffset;
+    public GameObject colorSprite;
+    public int[,,] blockArray;
 
-    void Start()
+    public int[,] GetShapeInRot(int rotation)
     {
-        transform.position = spawnPosition + transformOffset;
-        StartCoroutine(TetrominoFall());
-    }
+        int x = blockArray.GetLength(1);
+        int y = blockArray.GetLength(2);
 
-    IEnumerator TetrominoFall()
-    {
-        while (transform.position.y > 0)
+        int[,] shapeArray = new int[x, y];
+
+        for (int i = 0; i < x; i++)
         {
-            yield return new WaitForSeconds(GameManager.fallSpeed);
-            transform.position += new Vector3(0f, -1f, 0f);
+            for (int j = 0; j < y; j++)
+            {
+                shapeArray[i, j] = blockArray[rotation, i, j];
+            }
         }
+
+        return shapeArray;
     }
 }
