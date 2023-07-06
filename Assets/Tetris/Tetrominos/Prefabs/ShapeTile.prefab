@@ -98,3 +98,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boardArrayLoc: {x: 0, y: 0}
+  tileColor: 0

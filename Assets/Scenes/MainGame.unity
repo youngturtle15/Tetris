@@ -3290,7 +3290,15 @@ MonoBehaviour:
   currBlockRotation: 0
   currShape: {fileID: 632205053}
   tetrisBoard: {fileID: 173218476}
-  initialPos: {x: 3, y: 20}
+  initialPos: {x: 3, y: 22}
+  tileSprites:
+  - {fileID: 21300000, guid: bc0d26c8c8411e6438433b58901e1ff2, type: 3}
+  - {fileID: 21300000, guid: fcead367f4c65c04c93e5db65284e9f2, type: 3}
+  - {fileID: 21300000, guid: ed34fe8d0a2c8444eb78a634e844433d, type: 3}
+  - {fileID: 21300000, guid: af2a2e22b1012ae43ba8e14f73a363d9, type: 3}
+  - {fileID: 21300000, guid: ab3e1003bd866a04c9fecf6a6de29cf2, type: 3}
+  - {fileID: 21300000, guid: a049bc47f2dff82419e6af263af662d5, type: 3}
+  - {fileID: 21300000, guid: a7c4e67595d11b2449f4ec1fe32b0cc6, type: 3}
 --- !u!1 &1068891144
 GameObject:
   m_ObjectHideFlags: 0
