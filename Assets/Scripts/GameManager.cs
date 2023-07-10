@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -39,6 +38,7 @@ public class GameManager : MonoBehaviour
     private List<Sprite> tileSprites = new List<Sprite>();
 
     public static UnityEvent spawnShapeEvent = new UnityEvent();
+    public static UnityEvent GameOverEvent = new UnityEvent();
 
     private void Awake()
     {
@@ -236,6 +236,8 @@ public class GameManager : MonoBehaviour
         isInputAllowed = false;
         StopCoroutine(fallCoroutine);
 
+        currBlockRotation = 0;
+
         HashSet<int> rowsToCheck = new HashSet<int>();
 
         for (int i = 0; i < blockArray.GetLength(0); i++)
@@ -284,6 +286,7 @@ public class GameManager : MonoBehaviour
             if (boardArray[1, i] != 0 || boardArray[0, i] != 0)
             {
                 Debug.Log("Game Over");
+                GameOverEvent.Invoke();
                 return true;
             }
         }
